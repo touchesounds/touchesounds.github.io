@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: red;
+}
+
+.barra {
+    position: relative;
+    width: calc(100% / 14);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 500;
+    background-color: red; /* Cor de fundo inicial transparente */
+    transition: background-color 0.3s ease;
+}
+
+.barra:hover {
+    background-color: #000; /* Cor de fundo preta no hover */
+    color: white; /* Mudar a cor do texto para branco no hover */
+}
+
+.barra:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Cobertura preta semi-transparente no hover */
+    z-index: -1;
+    transition: background-color 0.3s ease;
+}
